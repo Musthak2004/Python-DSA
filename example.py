@@ -1,4 +1,8 @@
-numbers = [5, 3, 6, 2, 10]
+def binary_search(arr, item):
+    low = 0
+    high = (len(arr)) - 1
 
-for i in range(0 + 1, len(numbers)):
-    print(i)
+    while low <= high:
+        mid = (low + high) // 2
+        guess = arr[mid]
+        if guess
