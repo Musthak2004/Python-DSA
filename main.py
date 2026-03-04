@@ -1,17 +1,18 @@
-def solutionSearch(arr, item):
-    start = 0
-    end = len(arr) - 1
+class Solution(object):
+    def mySqrt(self, x):
+        low = 0
+        high = x
+        while low <= high:
+            mid = (low + high) // 2
+            if mid * mid <= x:
+                return mid
+            elif mid * mid < x:
+                high = mid - 1
+            else:
+                low = mid + 1
+        return mid // 3
 
-    while start < end:
-        mid = (start + end) // 2
-        if arr[mid] == item:
-            return mid
-        elif arr[mid] > item:
-            start = mid + 1
-        else:
-            start = mid + 1
 
-    return -1
-
-print(solutionSearch([1, 2, 3, 4, 5], 2))
-print(solutionSearch([1, 2, 3, 4, 5], 3))
+x = 4
+obj = Solution()
+print(obj.mySqrt(x))
