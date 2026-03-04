@@ -1,18 +1,34 @@
 class Solution(object):
-    def mySqrt(self, x):
+    def searchRange(self, nums, target):
         low = 0
-        high = x
+        high = len(nums) - 1
+
         while low <= high:
             mid = (low + high) // 2
-            if mid * mid <= x:
-                return mid
-            elif mid * mid < x:
+            guess = nums[mid]
+
+            if guess == target:
+                return [mid]
+            elif guess < target:
                 high = mid - 1
             else:
                 low = mid + 1
-        return mid // 3
 
+        return [-1, -1]
 
-x = 4
+        while low <= high:
+            mid = (low + high) // 2
+            guess = nums[mid]
+
+            if guess == target:
+                return [mid]
+            elif guess < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return [-1, -1]
+
+nums = [5,7,7,8,8,10]
 obj = Solution()
-print(obj.mySqrt(x))
+print(obj.searchRange(nums, 0))
