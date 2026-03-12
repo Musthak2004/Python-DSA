@@ -1,11 +1,12 @@
 class Solution(object):
     def runningSum(self, nums):
         result = []
-        current = 0
+        current_sum = 0
 
-        for num in nums:
-            current = current + num
-            result.append(current)
+        for i in nums:
+            current_sum += i
+            result.append(current_sum)
+
         return result
 
 obj = Solution()
